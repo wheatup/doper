@@ -1,0 +1,22 @@
+html body {
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+*, *::after, *::before {
+	font: inherit;
+	box-sizing: content-box;
+}
+
+.container {
+	width: 50%;
+	height: 50%;
+	background-color: #fff;
+}
