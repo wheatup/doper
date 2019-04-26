@@ -5,13 +5,12 @@ class Doper {
 		this._dom = dom;
 		this.parent = parent;
 
-		this._x = 0;
-		this._y = 0;
-		this._localX = 0;
-		this._localY = 0;
-		this._y = 0;
-		this._width = 100;
-		this._height = 100;
+		this.x = 0;
+		this.y = 0;
+		// this._localX = 0;
+		// this._localY = 0;
+		this.width = 100;
+		this.height = 100;
 		this._scale = 1;
 		this._scaleX = 1;
 		this._scaleY = 1;
@@ -22,6 +21,8 @@ class Doper {
 		this._minAnchorY = 0;
 		this._maxAnchorY = 1;
 		this._rotation = 0;
+		this._skewX = 0;
+		this._skewY = 0;
 		this.active = true;
 
 		if (params) {
@@ -47,7 +48,7 @@ class Doper {
 	_update() {
 		if (!this.active) return;
 		let transformOrigin = `${100 * this._pivotX}% ${100 * this._pivotY}%`;
-		let transform = `rotate(${this._rotation}deg) scale(${this._scaleX * this._scale}, ${this._scaleY * this._scale})`;
+		let transform = `rotate(${this._rotation}deg) scale(${this._scaleX * this._scale}, ${this._scaleY * this._scale}) skew(${this._skewX}deg, ${this._skewY}deg)`;
 
 		if (!isNaN(this._left) && !isNaN(this._right)) {
 			this.__left = this._parent.clientWidth * this._minAnchorX + this._left + this._x;
@@ -82,6 +83,32 @@ class Doper {
 		let top = this.__top + 'px';
 		let bottom = this.__bottom + 'px';
 		Object.assign(this.dom.style, { transformOrigin, transform, left, right, top, bottom });
+	}
+
+	get skewX() {
+		return this._skewX;
+	}
+
+	set skewX(value) {
+		this._skewX = value;
+		this._update();
+	}
+
+	get skewY() {
+		return this._skewY;
+	}
+
+	set skewY(value) {
+		this._skewY = value;
+		this._update();
+	}
+
+	get opacity() {
+		return this.dom.style.opacity || 0;
+	}
+
+	set opacity(value) {
+		this.dom.style.opacity = value;
 	}
 
 	get top() {
@@ -139,6 +166,9 @@ class Doper {
 
 	set height(value) {
 		this._height = value;
+		if (this._dom.tagName === 'IMG') {
+			this._dom.setAttribute('height', value + 'px');
+		}
 		this._update();
 	}
 
@@ -147,6 +177,9 @@ class Doper {
 	}
 
 	set width(value) {
+		if (this._dom.tagName === 'IMG') {
+			this._dom.setAttribute('width', value + 'px');
+		}
 		this._width = value;
 		this._update();
 	}
@@ -285,7 +318,7 @@ class Doper {
 		}
 
 		this._parent = _parent;
-		if(this._parent){
+		if (this._parent) {
 			this._parent.appendChild(this.dom);
 			this._parent.style.position = 'relative';
 		}
