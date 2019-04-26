@@ -51,7 +51,7 @@ class Doper {
 	_update() {
 		if (!this.active) return;
 		let transformOrigin = `${100 * this._pivotX}% ${100 * this._pivotY}%`;
-		let transform = `scale(${this._scaleX * this._scale}, ${this._scaleY * this._scale}) rotate(${this._rotation}deg)`;
+		let transform = `rotate(${this._rotation}deg) scale(${this._scaleX * this._scale}, ${this._scaleY * this._scale})`;
 
 		if (!isNaN(this._left) && !isNaN(this._right)) {
 			this.__left = this._parent.clientWidth * this._minAnchorX + this._left + this._x;
