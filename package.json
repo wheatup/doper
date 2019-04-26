@@ -1,11 +1,21 @@
 {
-  "name": "whdom",
-  "version": "1.0.0",
-  "description": "A virtual dom function for nodefy dom objects",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "doper",
+	"version": "0.1.0",
+	"description": "A dom wrapper for animation/positioning",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"dom",
+		"animation",
+		"positioning",
+		"wrapper"
+	],
+	"author": "wheatup",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wheatup/doper.git"
+	}
 }
