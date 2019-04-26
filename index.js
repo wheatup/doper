@@ -85,14 +85,7 @@ class Doper {
 		let right = this.__right + 'px';
 		let top = this.__top + 'px';
 		let bottom = this.__bottom + 'px';
-		console.log(transformOrigin);
 		Object.assign(this.dom.style, { transformOrigin, transform, left, right, top, bottom });
-
-		// let left = this._minAnchorX * this._parent.clientWidth - this._width * this._pivotX + this._x + 'px';
-		// let top = this._minAnchorY * this._parent.clientHeight - this._height * this._pivotY + this._y + 'px';
-		// let width = this._width + 'px';
-		// let height = this._height + 'px';
-		// Object.assign(this.dom.style, { transformOrigin, transform, left, top, width, height });
 	}
 
 	get top() {
