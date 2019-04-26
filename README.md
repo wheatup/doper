@@ -21,7 +21,7 @@ With this tool, you can manipulate the position/rotation/scale of dom element wi
 
 and many more...
 
-All the attributes are behave separately, and auto refreshs the dom correspondingly while you assigning them. Much like a UGUI way to control your dom elements. Works perfectly with other animation libraries (e.q. tween)
+All the attributes are behave separately, and auto refreshs the dom correspondingly while you assigning them. Much like a UGUI way to control your dom elements. Works perfectly with other animation libraries (e.g. tween)
 
 ### Examples
 
@@ -46,6 +46,7 @@ node.parent.style.position = 'relative';
 
 function update() {
 	node.rotation++;
+	node.x = Math.sin(node.rotation*0.05) * 200;
 	requestAnimationFrame(update);
 }
 
