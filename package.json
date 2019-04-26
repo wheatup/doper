@@ -1,6 +1,6 @@
 {
 	"name": "doper",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "A dom wrapper for animation/positioning",
 	"main": "index.js",
 	"scripts": {
