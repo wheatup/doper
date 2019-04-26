@@ -64,7 +64,7 @@ class Doper {
 			this.__left = this._parent.clientWidth - this.__right - this._width;
 		} else {
 			this.__left = this._minAnchorX * this._parent.clientWidth - this._width * this._pivotX + this._x;
-			this.__right = this._parent.clientWidth * (1 - this._maxAnchorX) - this._width * (1 - this._pivotX) + this._x;
+			this.__right = this._parent.clientWidth * (1 - this._maxAnchorX) - this._width * (1 - this._pivotX) - this._x;
 		}
 
 		if (!isNaN(this._top) && !isNaN(this._bottom)) {
@@ -78,7 +78,7 @@ class Doper {
 			this.__top = this._parent.clientHeight - this.__bottom - this._height;
 		} else {
 			this.__top = this._minAnchorY * this._parent.clientHeight - this._height * this._pivotY + this._y;
-			this.__bottom = this._parent.clientHeight * (1 - this._maxAnchorY) - this._height * (1 - this._pivotY) + this._y;
+			this.__bottom = this._parent.clientHeight * (1 - this._maxAnchorY) - this._height * (1 - this._pivotY) - this._y;
 		}
 
 		let left = this.__left + 'px';
