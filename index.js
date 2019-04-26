@@ -2,7 +2,7 @@ const htmlTester = /^<.*>$/g;
 
 class Doper {
 	constructor(dom, parent, params, css) {
-		this.dom = dom;
+		this._dom = dom;
 		this.parent = parent;
 
 		this._x = 0;
@@ -32,10 +32,6 @@ class Doper {
 
 		if (css) {
 			Object.assign(this._dom.style, css);
-		}
-
-		if (this._parent) {
-			this._parent.appendChild(this.dom);
 		}
 
 		this._update();
@@ -284,12 +280,15 @@ class Doper {
 			return;
 		}
 
-		if (this.parent) {
-			this.parent.removeChild(this.dom);
+		if (this._parent) {
+			this._parent.removeChild(this.dom);
 		}
 
-		this._parent = value;
-		this._parent.appendChild(this.dom);
+		this._parent = _parent;
+		if(this._parent){
+			this._parent.appendChild(this.dom);
+			this._parent.style.position = 'relative';
+		}
 	}
 
 	get dom() {
