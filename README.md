@@ -13,6 +13,10 @@ With this tool, you can manipulate the position/rotation/scale of dom element wi
 * scaleY
 * rotation
 * pivot
+* top
+* bottom
+* left
+* right
 * minAnchor
 * maxAnchor
 * parent
@@ -47,4 +51,4 @@ update();
 ```
 
 #### Result:
-![https://i.imgur.com/JxPoBs1.gif](https://i.imgur.com/JxPoBs1.gif)
+[https://i.imgur.com/JxPoBs1.gif](https://i.imgur.com/JxPoBs1.gif)
