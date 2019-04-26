@@ -51,4 +51,4 @@ update();
 ```
 
 #### Result:
-[https://i.imgur.com/JxPoBs1.gif](https://i.imgur.com/JxPoBs1.gif)
+![https://i.imgur.com/JxPoBs1.gif](https://i.imgur.com/JxPoBs1.gif)
