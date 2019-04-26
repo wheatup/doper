@@ -26,29 +26,25 @@ All the attributes are behave separately, and auto refreshs the dom correspondin
 ### Examples
 
 ```javascript
-let node = doper(
-	'<div>Hello World!</div>',
-	'.container', 
-	{
-		left: 80,
-		right: 80,
-		top: 80,
-		bottom: 80,
-		minAnchorX: 0.25,
-		maxAnchorX: 0.75,
-		minAnchorY: 0.25,
-		maxAnchorY: 0.75
-	}, {
-		backgroundColor: 'salmon',
-	});
+let node = doper('<div>Hello World!</div>', '.container');
 
 node.parent.style.position = 'relative';
+node.style.backgroundColor = '#789';
+
+// 居中
+node.minAnchorX = 0.5;
+node.maxAnchorX = 0.5;
+node.minAnchorY = 0.5;
+node.maxAnchorY = 0.5;
 
 function update() {
 	node.rotation++;
-	node.x = Math.sin(node.rotation*0.05) * 200;
+	node.y = Math.sin(node.rotation * 0.05) * 100;
 	requestAnimationFrame(update);
 }
 
 update();
 ```
+
+#### Result:
+![https://i.imgur.com/JxPoBs1.gif](https://i.imgur.com/JxPoBs1.gif)

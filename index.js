@@ -215,8 +215,6 @@ class Doper {
 
 	set scale(value) {
 		this._scale = value;
-		this.scaleX = value;
-		this.scaleY = value;
 		this._update();
 	}
 
