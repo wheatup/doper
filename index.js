@@ -371,5 +371,5 @@ const doper = function (dom, parent, params, css) {
 }
 
 if (typeof module === 'object') {
-	module.export = doper;
+	module.exports = doper;
 }
